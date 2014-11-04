@@ -1,0 +1,20 @@
+apply plugin: 'maven'
+apply plugin: 'java'
+
+repositories {
+    maven {
+        url "http://dev.mymavenrepo.com/repo/8vvE9rAzWmBTLogjKeJS/"
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://dev.mymavenrepo.com/repo/8vvE9rAzWmBTLogjKeJS/") //read
+            repository(url: "http://dev.mymavenrepo.com/repo/wfuBfa0F6UX3oEdxEk3F/")
+            pom.groupId = "com.mymavenrepo.com"
+            pom.artifactId = "test"
+            pom.version = "1.2-SNAPSHOT"
+        }
+    }
+}
