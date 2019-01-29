@@ -10,15 +10,15 @@
 
     <distributionManagement>
         <repository>
-            <id>abc</id>
-            <url>https://repo.mymavenrepo.com/tDSjYK4HlGgKW7fXKixl/</url>
+            <id>myMavenRepo.test.write</id>
+            <url>https://mymavenrepo.com/repo/eUlU58KjJ9xbl3c2SWZN/</url>
         </repository>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>abc</id>
-            <url>https://repo.mymavenrepo.com/tDSjYK4HlGgKW7fXKixl/</url>
+            <id>myMavenRepo.test.read</id>
+            <url>https://mymavenrepo.com/repo/RIAzlji9tdupoIGN8iTV/</url>
         </repository>
     </repositories>
 
