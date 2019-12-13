@@ -1,17 +1,34 @@
 apply plugin: 'maven'
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 repositories {
     maven {
-        url "http://dev.mymavenrepo.com/repo/8vvE9rAzWmBTLogjKeJS/"
+        url "https://mymavenrepo.com/repo/7mx263kYkQufsmMwBpQP/"
+    }
+}
+
+publishing {
+    repositories {
+        maven { url 'https://mymavenrepo.com/repo/RCftVn1jfs9k0kGjNfIZ/' }
+    }
+
+    publications {
+        maven(MavenPublication) {
+            groupId = 'my-maven-repo-test'
+            artifactId = 'test'
+            version = '1.1'
+
+            from components.java
+        }
     }
 }
 
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "http://dev.mymavenrepo.com/repo/8vvE9rAzWmBTLogjKeJS/") //read
-            repository(url: "http://dev.mymavenrepo.com/repo/wfuBfa0F6UX3oEdxEk3F/")
+            repository(url: "https://mymavenrepo.com/repo/7mx263kYkQufsmMwBpQP/") //read
+            repository(url: "https://mymavenrepo.com/repo/RCftVn1jfs9k0kGjNfIZ/")
             pom.groupId = "com.mymavenrepo.com"
             pom.artifactId = "test"
             pom.version = "1.2-SNAPSHOT"
